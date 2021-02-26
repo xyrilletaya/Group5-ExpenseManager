@@ -1,0 +1,33 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "budgetCollection",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userUID",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "postDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "budgetCollection",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userUID",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

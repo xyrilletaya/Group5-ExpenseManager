@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | Expense Manager</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <h1 class="text-center text-white">
+        EXPENSE MANAGER
+      </h1>
+      <div class="col-md-6 offset-md-3">
+        <div class="p-3 bg-light rounded p-5 shadow-lg">
+          <form id="login">
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+              <input type="email" id="loginEmail" class="form-control" placeholder="Email" aria-label="email"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-key"></i></span>
+              <input type="password" id="loginPassword" class="form-control" placeholder="Password"
+                aria-label="password" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary w-100">
+                  <i class="fa fa-check"></i>
+                  Login
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button id="facebook" class="btn btn-outline-primary w-100">
+                  <i class="fa fa-facebook"></i>
+                  Facebook
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button id="google" class="btn btn-outline-primary w-100">
+                  <i class="fa fa-google"></i>
+                  Google
+                </button>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#signUpModal">
+                No Account? Sign Up!
+              </button>
+            </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signUpModalLabel">Sign Up </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="signUp" class="form-control bg-transparent">
+              <div class="input-group mb-3">
+                <input type="email" id="signUpEmail" class="form-control" placeholder="Email" aria-label="email">
+              </div>
+              <div class="input-group mb-3">
+                <input type="password" id="signUpPassword" class="form-control" placeholder="Password"
+                  aria-label="password">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success">Sign Up!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyB4KGdbgUpcVHE-5rx29Qt6ZyiuaVq_vhY",
+        authDomain: "expensemanager-4dfb4.firebaseapp.com",
+        projectId: "expensemanager-4dfb4",
+        storageBucket: "expensemanager-4dfb4.appspot.com",
+        messagingSenderId: "539319678328",
+        appId: "1:539319678328:web:7a9a163cbe14322001448d",
+        measurementId: "G-R989XQMSVJ"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>
